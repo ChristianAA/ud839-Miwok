@@ -26,7 +26,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#BF360C"
-        android:text="Numbers"
+        android:text="@string/numbers"
         style="@style/Categories"
         android:onClick="openNumbersList"/>
 
@@ -35,7 +35,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#1B5E20"
-        android:text="Family Members"
+        android:text="@string/family_members"
         style="@style/Categories"/>
 
     <TextView
@@ -43,7 +43,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#01579B"
-        android:text="Colors"
+        android:text="@string/colors"
         style="@style/Categories"/>
 
     <TextView
@@ -51,7 +51,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#F57C00"
-        android:text="Phrases"
+        android:text="@string/phrases"
         style="@style/Categories"/>
 
 </LinearLayout>
