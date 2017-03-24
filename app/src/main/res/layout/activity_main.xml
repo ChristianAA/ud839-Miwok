@@ -27,8 +27,7 @@
         android:layout_height="wrap_content"
         android:background="#BF360C"
         android:text="@string/numbers"
-        style="@style/Categories"
-        android:onClick="openNumbersList"/>
+        style="@style/Categories"/>
 
     <TextView
         android:id="@+id/family"
