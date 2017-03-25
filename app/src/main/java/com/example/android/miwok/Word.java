@@ -6,15 +6,14 @@ package com.example.android.miwok;
 
 public class Word {
 
+    // Default Translation of the word
+    private String mDefaultTranslation;
     // Miwok Translation of the word
     private String mMiwokTranslation;
 
-    // Default Translation of the word
-    private String mDefaultTranslation;
-
-    public Word (String MiwokTranslation, String DefaultTranslation){
-        mMiwokTranslation = MiwokTranslation;
+    public Word (String DefaultTranslation, String MiwokTranslation){
         mDefaultTranslation = DefaultTranslation;
+        mMiwokTranslation = MiwokTranslation;
     }
 
     // Get the Miwok Translation of the word
@@ -26,4 +25,5 @@ public class Word {
     public String getDefaultTranslation () {
         return mDefaultTranslation;
     }
+
 }
