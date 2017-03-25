@@ -7,6 +7,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import static android.view.View.Z;
+
 public class NumbersActivity extends AppCompatActivity {
 
     @Override
@@ -27,9 +29,13 @@ public class NumbersActivity extends AppCompatActivity {
             words.add("ten");
 
         LinearLayout rootview = (LinearLayout)findViewById(R.id.rootView);
-        TextView wordView = new TextView(this);
-        wordView.setText(words.get(0));
-        rootview.addView(wordView);
 
+        int i = 0;
+        while (i < words.size()) {
+            TextView wordView = new TextView(this);
+            wordView.setText(words.get(i));
+            rootview.addView(wordView);
+            i++;
+        }
     }
 }
