@@ -17,25 +17,31 @@ public class NumbersActivity extends AppCompatActivity {
         setContentView(R.layout.activity_numbers);
 
         ArrayList<String> words = new ArrayList<String>();
-            words.add("one");
-            words.add("two");
-            words.add("three");
-            words.add("four");
-            words.add("five");
-            words.add("six");
-            words.add("seven");
-            words.add("eight");
-            words.add("nine");
-            words.add("ten");
+        words.add("one");
+        words.add("two");
+        words.add("three");
+        words.add("four");
+        words.add("five");
+        words.add("six");
+        words.add("seven");
+        words.add("eight");
+        words.add("nine");
+        words.add("ten");
 
-        LinearLayout rootview = (LinearLayout)findViewById(R.id.rootView);
+        LinearLayout rootview = (LinearLayout) findViewById(R.id.rootView);
 
-        int i = 0;
+       /* int i = 0;
         while (i < words.size()) {
             TextView wordView = new TextView(this);
             wordView.setText(words.get(i));
             rootview.addView(wordView);
             i++;
+        }    */
+
+        for (int i = 0; i < words.size(); i++) {
+            TextView wordView = new TextView(this);
+            wordView.setText(words.get(i));
+            rootview.addView(wordView);
         }
     }
 }
