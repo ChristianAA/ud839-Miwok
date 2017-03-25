@@ -10,6 +10,8 @@ public class Word {
     private String mDefaultTranslation;
     // Miwok Translation of the word
     private String mMiwokTranslation;
+    // Image asociated to the word
+    private int mImageResourceId;
 
     public Word (String DefaultTranslation, String MiwokTranslation){
         mDefaultTranslation = DefaultTranslation;
@@ -25,5 +27,11 @@ public class Word {
     public String getDefaultTranslation () {
         return mDefaultTranslation;
     }
+
+    // Get the Image of the word
+    public int GetImageResourceId () {
+        return mImageResourceId;
+    }
+
 
 }
