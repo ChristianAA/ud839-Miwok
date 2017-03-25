@@ -2,12 +2,10 @@ package com.example.android.miwok;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import java.util.ArrayList;
-
-import static android.view.View.Z;
 
 public class NumbersActivity extends AppCompatActivity {
 
@@ -28,20 +26,10 @@ public class NumbersActivity extends AppCompatActivity {
         words.add("nine");
         words.add("ten");
 
-        LinearLayout rootview = (LinearLayout) findViewById(R.id.rootView);
+        ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, words);
 
-       /* int i = 0;
-        while (i < words.size()) {
-            TextView wordView = new TextView(this);
-            wordView.setText(words.get(i));
-            rootview.addView(wordView);
-            i++;
-        }    */
+        ListView listView = (ListView) findViewById(R.id.list);
 
-        for (int i = 0; i < words.size(); i++) {
-            TextView wordView = new TextView(this);
-            wordView.setText(words.get(i));
-            rootview.addView(wordView);
-        }
+        listView.setAdapter(itemsAdapter);
     }
 }
