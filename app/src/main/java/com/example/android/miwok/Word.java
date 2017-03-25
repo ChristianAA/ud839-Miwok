@@ -35,7 +35,7 @@ public class Word {
     }
 
     // Get the Image of the word
-    public int GetImageResourceId () {
+    public int getImageResourceId () {
         return mImageResourceId;
     }
 
