@@ -17,12 +17,23 @@
     <color name="colorPrimary">#4A312A</color>
     <color name="colorPrimaryDark">#2F1D1A</color>
     <color name="colorAccent">#FF4081</color>
+
+    <!-- Background color in main_activity-->
     <color name="categories">#FFF7DA</color>
+
+    <!-- Background color in main_activity for each category -->
     <color name="numbers">#FD8E09</color>
     <color name="family">#379237</color>
     <color name="colors">#8800A0</color>
     <color name="phrases">#16AFCA</color>
+
+    <!-- Background color for the image -->
     <color name="number_image_bg">#FFF7DA</color>
-    <color name="number_text_bg">#FD8E09</color>
+
+    <!-- Background color for text_views in each category -->
+    <color name="numbers_text_bg">#FD8E09</color>
+    <color name="family_text_bg">#379237</color>
+    <color name="colors_text_bg">#8800A0</color>
+    <color name="phrases_text_bg">#16AFCA</color>
 
 </resources>
