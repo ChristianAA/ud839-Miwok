@@ -33,7 +33,7 @@
             android:name=".NumbersActivity"
             android:label="@string/numbers"/>
         <activity
-            android:name=".PhasesActivity"
+            android:name=".PhrasesActivity"
             android:label="@string/phrases"/>
         <activity
             android:name=".ColorsActivity"
