@@ -12,16 +12,20 @@ public class Word {
     private String mMiwokTranslation;
     // Image asociated to the word
     private int mImageResourceId;
+    // Audio asociated to the word
+    private int mAudioResourceId;
 
-    public Word (String defaultTranslation, String miwokTranslation){
+    public Word (String defaultTranslation, String miwokTranslation, int audioResourceId){
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
+        mAudioResourceId = audioResourceId;
     }
 
-    public Word (String defaultTranslation, String miwokTranslation, int imageResourceId){
+    public Word (String defaultTranslation, String miwokTranslation, int imageResourceId, int audioResourceId){
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
         mImageResourceId = imageResourceId;
+        mAudioResourceId = audioResourceId;
     }
 
     // Get the Miwok Translation of the word
@@ -37,6 +41,11 @@ public class Word {
     // Get the Image of the word
     public int getImageResourceId () {
         return mImageResourceId;
+    }
+
+    // Get the Audio of the word
+    public int getAudioResourceId (){
+        return mAudioResourceId;
     }
 
 }
