@@ -47,8 +47,8 @@ public class MainActivity extends AppCompatActivity {
         family.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent numbersIntent = new Intent(MainActivity.this, FamilyActivity.class);
-                startActivity(numbersIntent);
+                Intent colorsIntent = new Intent(MainActivity.this, FamilyActivity.class);
+                startActivity(colorsIntent);
             }
         });
 
@@ -59,8 +59,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                Intent numbersIntent = new Intent(MainActivity.this, ColorsActivity.class);
-                startActivity(numbersIntent);
+                Intent colorsIntent = new Intent(MainActivity.this, ColorsActivity.class);
+                startActivity(colorsIntent);
             }
         });
 
@@ -71,12 +71,10 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                Intent numbersIntent = new Intent(MainActivity.this, PhasesActivity.class);
-                startActivity(numbersIntent);
+                Intent phrasesIntent = new Intent(MainActivity.this, PhasesActivity.class);
+                startActivity(phrasesIntent);
             }
         });
-
-
 
     }
 }

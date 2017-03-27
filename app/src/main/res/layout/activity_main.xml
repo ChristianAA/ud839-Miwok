@@ -17,39 +17,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#BDBDBD"
-    android:orientation="vertical"
-    tools:context="com.example.android.miwok.MainActivity">
+    android:background="@color/categories"
+    tools:context="com.example.android.miwok.MainActivity"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/numbers"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#BF360C"
+        android:background="@color/numbers"
         android:text="@string/numbers"
         style="@style/Categories"/>
 
     <TextView
         android:id="@+id/family"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#1B5E20"
+        android:background="@color/family"
         android:text="@string/family_members"
         style="@style/Categories"/>
 
     <TextView
         android:id="@+id/colors"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#01579B"
+        android:background="@color/colors"
         android:text="@string/colors"
         style="@style/Categories"/>
 
     <TextView
         android:id="@+id/phrases"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#F57C00"
+        android:background="@color/phrases"
         android:text="@string/phrases"
         style="@style/Categories"/>
 

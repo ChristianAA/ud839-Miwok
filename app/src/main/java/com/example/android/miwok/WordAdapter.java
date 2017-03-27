@@ -1,10 +1,12 @@
 package com.example.android.miwok;
 
 import android.app.Activity;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -15,8 +17,12 @@ import java.util.ArrayList;
 
 public class WordAdapter extends ArrayAdapter<Word> {
 
-    public WordAdapter(Activity context, ArrayList<Word> WordAdapter) {
+    //BG color
+    private int mColorResourceId;
+
+    public WordAdapter(Activity context, ArrayList<Word> WordAdapter, int colorResourceId ) {
         super(context, 0, WordAdapter);
+        mColorResourceId = colorResourceId;
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -37,6 +43,20 @@ public class WordAdapter extends ArrayAdapter<Word> {
         // Same for defaultTextView
         TextView defaultTextView = (TextView) listItemView.findViewById(R.id.default_text_view);
         defaultTextView.setText(currentWord.getDefaultTranslation());
+
+        ImageView imageView = (ImageView) listItemView.findViewById(R.id.image);
+
+        if (currentWord.getImageResourceId() != 0) {
+            imageView.setImageResource(currentWord.getImageResourceId());
+            imageView.setVisibility(View.VISIBLE);
+        } else {
+            imageView.setVisibility(View.GONE);
+        }
+
+        //set the color for the background
+        View textContainer = listItemView.findViewById(R.id.text_container);
+        int color = ContextCompat.getColor(getContext(), mColorResourceId);
+        textContainer.setBackgroundColor(color);
 
         return listItemView;
 
