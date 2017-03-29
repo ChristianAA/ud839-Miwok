@@ -21,12 +21,6 @@
     <!-- Background color in main_activity-->
     <color name="categories">#FFF7DA</color>
 
-    <!-- Background color in main_activity for each category -->
-    <color name="numbers">#FD8E09</color>
-    <color name="family">#379237</color>
-    <color name="colors">#8800A0</color>
-    <color name="phrases">#16AFCA</color>
-
     <!-- Background color for the image -->
     <color name="number_image_bg">#FFF7DA</color>
 

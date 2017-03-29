@@ -59,7 +59,7 @@ public class NumbersFragment extends Fragment {
         words.add(new Word("nine", "wo’e", R.drawable.number_nine, R.raw.number_nine));
         words.add(new Word("ten", "na’aacha", R.drawable.number_ten, R.raw.number_ten));
 
-        WordAdapter itemsAdapter = new WordAdapter(getActivity(), words, R.color.numbers);
+        WordAdapter itemsAdapter = new WordAdapter(getActivity(), words, R.color.colors_text_bg);
 
         ListView listView = (ListView) rootView.findViewById(R.id.list);
 
