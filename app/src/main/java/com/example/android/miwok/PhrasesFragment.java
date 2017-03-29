@@ -4,22 +4,23 @@ import android.content.Context;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 
-public class PhrasesActivity extends AppCompatActivity {
+public class PhrasesFragment extends Fragment {
 
     private MediaPlayer mMediaPlayer;
 
     private AudioManager mAudioManager;
 
     //Create a single instance of OnCompletionListener an reuse everytime
-    private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener()    {
+    private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
         public void onCompletion (MediaPlayer mp){
             releaseMediaPlayer();
         }
@@ -40,11 +41,11 @@ public class PhrasesActivity extends AppCompatActivity {
     };
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.word_list);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.word_list, container, false);
 
-        mAudioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+        mAudioManager = (AudioManager) getActivity().getSystemService(Context.AUDIO_SERVICE);
 
         final ArrayList<Word> words = new ArrayList<Word>();
         words.add(new Word("Where are you going?", "minto wuksus",R.raw.phrase_where_are_you_going));
@@ -58,9 +59,9 @@ public class PhrasesActivity extends AppCompatActivity {
         words.add(new Word("Let´s go", "yoowutis",R.raw.phrase_lets_go));
         words.add(new Word("Come here.", "әnni'nem",R.raw.phrase_come_here));
 
-        WordAdapter itemsAdapter = new WordAdapter(this, words, R.color.phrases_text_bg);
+        WordAdapter itemsAdapter = new WordAdapter(getActivity(), words, R.color.phrases_text_bg);
 
-        ListView listView = (ListView) findViewById(R.id.list);
+        ListView listView = (ListView) rootView.findViewById(R.id.list);
 
         listView.setAdapter(itemsAdapter);
 
@@ -70,9 +71,9 @@ public class PhrasesActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
                 releaseMediaPlayer();
+
                 //Get the {@link Word} object at the given position the user clicked on
                 Word word = words.get(i);
-                Log.v("PhrasesActivity", "Current word: " + word);
 
                 int result = mAudioManager.requestAudioFocus(mOnAudioFocusChangeListener,
                         AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
@@ -80,7 +81,7 @@ public class PhrasesActivity extends AppCompatActivity {
                 if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
 
                     // Create and setup the {@link MediaPlayer} for the audio resource associated with the current word
-                    mMediaPlayer = MediaPlayer.create(PhrasesActivity.this, word.getAudioResourceId());
+                    mMediaPlayer = MediaPlayer.create(getActivity(), word.getAudioResourceId());
 
                     //start the audio
                     mMediaPlayer.start();
@@ -90,9 +91,12 @@ public class PhrasesActivity extends AppCompatActivity {
                 }
             }
         });
+
+        return rootView;
     }
+
     @Override
-    protected void onStop() {
+    public void onStop() {
         super.onStop();
         releaseMediaPlayer();
     }
@@ -115,4 +119,3 @@ public class PhrasesActivity extends AppCompatActivity {
         }
     }
 }
-
